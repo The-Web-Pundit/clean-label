@@ -67,7 +67,7 @@
           </div><!-- end stepper -->
         </div>
         <div class="col-md-6 col-lg-5 mt-5 px-5">
-          <form>
+          <form id="login-form">
             <div class="form-group">
               <label for="phone">Register or login with</label>
               <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="Your phone number">
@@ -144,6 +144,12 @@
         }
       })
 
+      $('#login-form').submit(function (evt) {
+        evt.preventDefault();
+        // Manual page redirect. This code will have to be replaced
+        // for actual implementation to work
+        window.location.replace('/otp-page.html');
+      })
     });
   </script>
 </body>
