@@ -20,19 +20,49 @@
   <!-- build:js scripts/modernizr.js -->
   <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
+
+  <style>
+    .otp-form input {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin-right: 15px;
+      text-align: center;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    .otp-form input:last-child {
+      margin-right: 0;
+    }
+
+    .otp-form input::-webkit-inner-spin-button,
+    .otp-form input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+
+    .otp-form input:focus,
+    .otp-form input.focus {
+      border-color: green;
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
 </head>
 
-<body class="login" style="height: 90vh;">
+<body class="login" style="height: 100vh;">
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-5 px-md-5">
+        <div class="col-md-6 mt-5 px-5">
           <h1 class="h2">Register / Login</h1>
           <!-- Stepper -->
-          <div class="stepper mt-3 pt-md-5 pt-4">
+          <div class="stepper mt-3 pt-5">
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
                 <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">1</div>
@@ -66,29 +96,43 @@
             </div>
           </div><!-- end stepper -->
         </div>
-        <div class="col-md-6 col-lg-5 mt-md-5 px-md-5">
-          <form>
-            <div class="form-group">
-              <label for="phone">Register or login with</label>
-              <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="Your phone number">
+        <div class="col-md-6 col-lg-5 mt-5 px-5">
+          <h2 class="h6">
+            <strong>Enter OTP sent to your mobile number</strong>
+          </h2>
+
+          <div class="input-group mt-3" style="width: fit-content;">
+            <input type="tel" value="967896541" class="form-control border-0 pl-0" placeholder="your phone number"
+              aria-label="your phone number" aria-describedby="edit-number">
+            <div class="input-group-append">
+              <button class="btn btn-link" type="button" id="edit-number"><i class=" fas fa-pencil-alt"></i></button>
             </div>
-            <button class="btn btn-submit btn-success btn-block invisible text-uppercase">Continue</button>
+          </div>
+
+          <form class="otp-form my-5">
+            <input id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+            <input id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)">
+            <input id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)">
+            <input id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)">
+            <input id="codeBox5" type="number" maxlength="1" onkeyup="onKeyUpEvent(5, event)" onfocus="onFocusEvent(5)">
+            <input id="codeBox6" type="number" maxlength="1" onkeyup="onKeyUpEvent(6, event)" onfocus="onFocusEvent(6)">
+
+            <small class="form-text text-danger pt-1">
+              Please enter a valid OTP
+            </small>
+
+            <button class="btn btn-link mt-3 pl-0">Resend OTP</button>
           </form>
 
-          <div class="py-4">
-            <p>Or with</p>
-            <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link mr-2"><i
-                class="fab fa-google"></i></a>
-            <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link"><i
-                class="fab fa-facebook-f"></i>
-            </a>
-          </div>
+          <!--
+            Uncomment the below lines for the check mark
+           -->
+          <!-- <div id="success" class="d-flex justify-content-center align-items-center h-100">
+            <span class="display-4">
+              <i class="fas fa-check-circle text-success"></i>
+            </span>
+          </div> -->
 
-          <div class="py-4">
-            <button class="btn bg-blue btn-block text-white text-uppercase mb-3" data-toggle="modal"
-              data-target="#refferal-modal">I have a referral link</button>
-            <a href="#" target="_blank" class="text-secondary">Read the terms and conditions</a>
-          </div>
         </div>
       </div>
     </div>
@@ -132,20 +176,37 @@
   <!-- endbuild -->
 
   <script>
-    $(document).ready(function () {
 
-      // Check if the user has entered
-      // a valid number
-      $('#phone').change(function () {
-        var phone = $(this).val()
-        if (phone.length != 10) {
-          alert("Please enter a valid number")
+
+    function getCodeBoxElement(index) {
+      return document.getElementById('codeBox' + index);
+    }
+
+    function onKeyUpEvent(index, event) {
+      const eventCode = event.which || event.keyCode;
+      if (getCodeBoxElement(index).value.length === 1) {
+        if (index !== 6) {
+          getCodeBoxElement(index + 1).focus();
         } else {
-          $('.btn-submit').removeClass('invisible')
+          getCodeBoxElement(index).blur();
+          // Submit code
+          console.log('submit code ');
         }
-      })
+      }
+      if (eventCode === 8 && index !== 1) {
+        getCodeBoxElement(index - 1).focus();
+      }
+    }
 
-    });
+    function onFocusEvent(index) {
+      for (item = 1; item < index; item++) {
+        const currentElement = getCodeBoxElement(item);
+        if (!currentElement.value) {
+          currentElement.focus();
+          break;
+        }
+      }
+    }
   </script>
 </body>
 
