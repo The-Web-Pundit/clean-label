@@ -61,42 +61,106 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mt-3">
-          <h1 class="h4">Invite Friends. Earn Products.</h1>
+          <h5 class="my-3 my-md-4">Invite Friends. Earn Products.</h5>
 
           <div>
-            <p>Share your unique link with your neighbors, friends & families. You earn products based on the number
+            <p class="font-sm text-secondary">Share your unique link with your neighbors, friends & families. You earn
+              products based on the number
               of people who join us using your link.</p>
 
-            <p class="font-weight-bold text-secondary">Open your WhatsApp & send :</p>
+            <p class="font-weight-bold text-secondary font-sm mb-0">Open your WhatsApp & send :</p>
             <span style="font-size: 3rem">
               <i class="fab fa-whatsapp-square text-success"></i>
             </span>
           </div>
-
           <hr>
           <form>
             <div class="form-row">
               <div class="form-group col-md-10">
-                <label for="email">Enter as many email address as you would like!</label>
+                <label for="email" class="text-secondary font-sm font-weight-bold">Enter as many email address as you
+                  would like!</label>
                 <input type="email" class="form-control rounded-0" id="email">
               </div>
               <div class="form-group col-md-2 my-auto pt-3">
-                <button type="submit" class="btn btn-dark rounded-0">Send Invites</button>
+                <button type="button" class="btn btn-dark rounded-0" data-toggle="modal" data-target="#invitees">Send
+                  Invites</button>
               </div>
             </div>
           </form>
 
-          <div class="invites">
-            <p class="text-muted">
+          <div class="invites mt-4">
+            <p class="text-secondary font-sm font-weight-bold">
               Or connect your address book and send it with selected friends
             </p>
-            <button type="button" class="btn btn-outline-primary"> <i class="fab fa-google"></i> Google</button>
-            <button type="button" class="btn btn-outline-primary"><i class="fab fa-yahoo"></i> Yahoo</button>
+            <button type="button" class="btn text-white" style="background-color: #4285F4;"> <i
+                class="fab fa-google"></i> Google</button>
+            <button type="button" class="btn text-white" style="background-color: #7b0099;"><i class="fab fa-yahoo"></i>
+              Yahoo</button>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Modal -->
+  <div class="modal fade" id="invitees" tabindex="-1" role="dialog" aria-labelledby="inviteesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-5">
+          <div>
+            <label class="sr-only" for="contact">Filter Contacts</label>
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" id="contact" placeholder="Filter Contacts">
+              <div class="input-group-append  ">
+                <div class="input-group-text"><i class="fas fa-search"></i></div>
+              </div>
+            </div>
+          </div>
+          <table class="table mt-3 table-borderless">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>user@gmail.com</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>user@gmail.com</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>user@gmail.com</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-5">
+            <button type="button" class="btn btn-outline-dark rounded-pill px-5">Select All</button>
+            <button type="button" class="btn btn-outline-dark rounded-pill px-5">Deselect
+              All</button>
+            <button type="button" class="btn btn-outline-danger rounded-pill float-right px-5">Send to 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
