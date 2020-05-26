@@ -12,6 +12,7 @@
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -29,38 +30,38 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 mt-5">
-          <h1>Register / Login</h1>
+          <h1 class="h2">Register / Login</h1>
           <!-- Stepper -->
 
-          <div class="stepper d-flex flex-column mt-5 pt-5">
+          <div class="stepper d-flex flex-column mt-3 pt-5">
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
-                <div class="rounded-circle py-2 px-3 bg-white text-secondary mb-1">1</div>
+                <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">1</div>
                 <div class="line h-100"></div>
               </div>
               <div>
-                <p class="lead text-muted pb-5 pt-1"><strong>Register or login</strong> using your phone or
+                <p class="pb-5 pt-1"><strong>Register or login</strong> using your phone or
                   your social identity</p>
               </div>
             </div>
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
-                <div class="rounded-circle py-2 px-3 bg-white text-secondary mb-1">2</div>
+                <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">2</div>
                 <div class="line h-100"></div>
               </div>
               <div>
-                <p class="lead text-muted pb-5 pt-1">Select your <strong>location, membership &
+                <p class="pb-5 pt-1">Select your <strong>location, membership &
                     complete transaction </strong>to activate
                   referral system</p>
               </div>
             </div>
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
-                <div class="rounded-circle py-2 px-3 bg-white text-secondary mb-1">3</div>
+                <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">3</div>
                 <div class="line h-100 d-none"></div>
               </div>
               <div>
-                <p class="lead text-muted pb-5 pt-1"><strong>Invite friends and earn products</strong>
+                <p class="pb-5 pt-1"><strong>Invite friends and earn products</strong>
                   based on the milestone you achieve.</p>
               </div>
             </div>
@@ -68,10 +69,11 @@
 
           <!-- End Stepper -->
         </div>
-        <div class="col-md-6 mt-5">
-          <div class="d-flex flex-column justify-content-around" style="height:100vh">
-            <div class="p-2">
-              <p class="mb-2">Enter OTP sent to your mobile number</p>
+
+        <div class="col-md-6">
+          <div class="mt-md-5" style="height:92vh">
+            <div class="">
+              <p class="font-weight-bold py-3">Enter OTP sent to your mobile number</p>
               <p class="d-inline">
                 7760100400
               </p>
@@ -96,9 +98,7 @@
                   Please enter a valid OTP.
                 </div>
               </form>
-            </div>
-            <div class="p-2 text-center">
-              <a href="#" target="_blank" class="btn btn-link text-secondary text-uppercase">Resend OTP</a>
+              <a href="#" target="_blank" class="btn btn-link text-secondary text-uppercase mt-5">Resend OTP</a>
             </div>
           </div>
         </div>

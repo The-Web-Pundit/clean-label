@@ -12,6 +12,7 @@
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -59,14 +60,15 @@
   </nav>
   <section class="first-section subscription">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h1 class="h4 ">If you are from Bengaluru</h1>
+      <div class="row pt-5">
+        <div class="col-md-6">
+          <h1 class="h6 mb-4">If you are from Bengaluru</h1>
           <label>
             <input type="radio" name="demo" class="card-input-element d-none">
             <div class="card card-body d-flex flex-row justify-content-between align-items-center">
               <div>
-                <p class="mb-0">Yearly mebership at <strong>Rs.999(Rs.1400)</strong></p>
+                <p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.999
+                      <s>(Rs.1400)</s></strong></span></p>
                 <small>Welcome kit - 5 Most popular products (worth Rs. 1000)</small>
               </div>
             </div>
@@ -75,24 +77,28 @@
             <input type="radio" name="demo" class="card-input-element d-none">
             <div class="card card-body d-flex flex-row justify-content-between align-items-center">
               <div>
-                <p class="mb-0">Yearly mebership at <strong>Rs.350(Rs.750)</strong></p>
+                <p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.350
+                      <s>(Rs.750)</s></strong></span></p>
                 <small>Surprise Gift</small>
               </div>
             </div>
           </label>
-          <small>Estimated order delivery is July 31st</small>
+          <small class="text-secondary">Estimated order delivery is July 31st</small>
           <hr>
-          <h4 class="h5">If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram</h4>
+          <h4 class="h6 my-4">If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram</h4>
           <label>
             <input type="radio" name="demo" class="card-input-element d-none">
             <div class="card card-body d-flex flex-row justify-content-between align-items-center">
               <div>
-                <p class="mb-0">Yearly mebership at <strong>Rs.999(Rs.1400)</strong></p>
+                <p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.999
+                      <s>(Rs.1400)</s></strong></span></p>
                 <small>Welcome kit - 5 Most popular products (worth Rs. 1000)</small>
               </div>
             </div>
-            <small>Tote Bag delivery July 31st<br>
-              Estimated Order delivery Jan - Mar, 2021</small>
+            <p class="pt-3 text-secondary">
+              <small>Tote Bag delivery July 31st<br>
+                Estimated Order delivery Jan - Mar, 2021</small>
+            </p>
           </label>
         </div>
       </div>
