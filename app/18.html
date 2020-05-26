@@ -25,39 +25,46 @@
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
     <a class="navbar-brand" href="#">Clean Label</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cleanlabel-menu"
-      aria-controls="cleanlabel-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="cleanlabel-menu">
-      <ul class="navbar-nav w-100">
-        <li class="nav-item dropdown ml-md-auto">
-          <div class="d-flex align-items-md-center">
-            <div>
+
+    <div class="collapse navbar-collapse bg-light mr-5" id="navbarCollapse">
+      <ul class="navbar-nav sidenav ml-md-auto bg-light pl-md-4 pt-4 pt-md-0" id="navAccordion">
+        <li class="nav-item mt-2">
+          <div class="row">
+            <div class="col-md-3 px-md-0">
               <img src="./images/avatar.jpg" alt="User" class="rounded-circle profile-photo">
             </div>
-            <div>
-              <a class="nav-link dropdown-toggle pb-0" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Hey, Giridharan
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Settings</a>
-                <a class="dropdown-item" href="#">Help</a>
-                <a class="dropdown-item" href="#">Logout</a>
-              </div>
-              <a href="" class="text-success pb-md-2 px-md-2">Become a Member</a>
+            <div class="col-md-9 px-md-0">
+              <p class="mb-0">Hey, Giridharan </p>
+              <a href="" class="text-success pb-md-2 px-0">Become a Member</a>
             </div>
           </div>
-
+        </li>
+        <li class="nav-item pt-3 pb-2 referral-link">
+          <a class="nav-link" href="#">Your Referrals</a>
+        </li>
+        <li class="nav-item pt-2">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+        <li class="nav-item w-75 mt-5">
+          <a class="btn-sm btn-block btn btn-outline-dark" href="#">Logout</a>
         </li>
       </ul>
     </div>
   </nav>
-  <section class="first-section">
+
+  <main class="content-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-md-8 mt-3">
@@ -72,8 +79,15 @@
         </div>
       </div>
     </div>
+  </main>
+
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="text-center">
+        &copy; 2020 All rights reserved
+      </div>
     </div>
-  </section>
+  </footer>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -115,20 +129,6 @@
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="card font-sm">
-                <div class="card-body">
-                  <p class="mb-0">user@gmail.com</p>
-                  <small>Pending</small>
-                  <div class="progress my-2" style="height: 10px;">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <i class="far fa-bell text-primary"></i>
-                  <p class="mb-0 mb-0 d-inline">user@gmail.com hasn't signed up yet.</p>
-                  <button class="btn btn-link text-danger pl-3 pt-0">Send a reminder email <i
-                      class="fas fa-arrow-right"></i></button>
-                </div>
-              </div>
-              <div class="card mt-3 font-sm">
                 <div class="card-body">
                   <p class="mb-0">user@gmail.com</p>
                   <small>Pending</small>
