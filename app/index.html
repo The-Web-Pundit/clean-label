@@ -22,18 +22,17 @@
   <!-- endbuild -->
 </head>
 
-<body>
+<body class="login" style="height: 100vh;">
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <section class="login">
+  <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 mt-5 px-5">
           <h1 class="h2">Register / Login</h1>
           <!-- Stepper -->
-
-          <div class="stepper d-flex flex-column mt-3 pt-5">
+          <div class="stepper mt-3 pt-5">
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
                 <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">1</div>
@@ -65,30 +64,47 @@
                   based on the milestone you achieve.</p>
               </div>
             </div>
+          </div><!-- end stepper -->
+        </div>
+        <div class="col-md-6 col-lg-5 mt-5 px-5">
+          <form>
+            <div class="form-group">
+              <label for="phone">Register or login with</label>
+              <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="Your phone number">
+            </div>
+            <button class="btn btn-submit btn-success btn-block invisible text-uppercase">Continue</button>
+          </form>
+
+          <div class="py-4">
+            <p>Or with</p>
+            <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link mr-2"><i
+                class="fab fa-google"></i></a>
+            <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link"><i
+                class="fab fa-facebook-f"></i></a>
           </div>
 
-          <!-- End Stepper -->
+          <div class="py-4">
+            <button class="btn bg-blue btn-block text-white text-uppercase mb-3" data-toggle="modal"
+              data-target="#refferal-modal">I have a referral link</button>
+            <a href="#" target="_blank" class="text-secondary">Read the terms and conditions</a>
+          </div>
         </div>
-        <div class="col-md-4 mt-5">
-          <div class="d-flex flex-column justify-content-around" style="height:92vh">
-            <div class="p-2">
-              <form>
-                <div class="form-group">
-                  <label for="phone">Register or login with</label>
-                  <input type="phone" class="form-control" id="phone" placeholder="Your phone number">
-                </div>
-              </form>
-            </div>
-            <div class="p-2">
-              <p>or with</p>
-              <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link"
-                style="border: 1px solid #eee;"><i class="fab fa-google"></i></a>
-              <a href="#" type="button" class="btn rounded-circle shadow btn-lg btn-link"
-                style="border: 1px solid #eee;"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div class="p-2">
-              <button class="btn bg-blue btn-block text-white text-uppercase mb-3">I have a referral link</button>
-              <a href="#" target="_blank" class="text-secondary">Read the terms and conditions</a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade border-0" id="refferal-modal" tabindex="-1" role="dialog"
+      aria-labelledby="refferal-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body p-5">
+            <label for="referral-link" class="sr-only sr-only-focusable">Paste the referral link here</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="validationServerUsername"
+                placeholder="Paste the referral link here" required>
+              <div class="input-group-append">
+                <button class="btn btn-dark">Apply</button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,6 +129,23 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
+  <script>
+    $(document).ready(function () {
+
+      // Check if the user has entered
+      // a valid number
+      $('#phone').change(function () {
+        var phone = $(this).val()
+        if (phone.length != 10) {
+          alert("Please enter a valid number")
+        } else {
+          $('.btn-submit').removeClass('invisible')
+        }
+      })
+
+    });
+  </script>
 </body>
 
 </html>
