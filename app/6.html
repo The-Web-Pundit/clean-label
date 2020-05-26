@@ -12,8 +12,8 @@
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
-  <link rel="stylesheet" href="/node_modules/bs-stepper/dist/css/bs-stepper.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/node_modules/bs-stepper/dist/css/bs-stepper.min.css">
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -23,18 +23,17 @@
   <!-- endbuild -->
 </head>
 
-<body>
+<body class="login" style="height: 90vh;">
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <section class="login">
+  <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 mt-5 px-md-5">
           <h1 class="h2">Register / Login</h1>
           <!-- Stepper -->
-
-          <div class="stepper mt-3 pt-5">
+          <div class="stepper mt-3 pt-md-5 pt-4">
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
                 <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">1</div>
@@ -66,76 +65,48 @@
                   based on the milestone you achieve.</p>
               </div>
             </div>
-          </div>
-
-          <!-- End Stepper -->
+          </div><!-- end stepper -->
         </div>
-        <div class="col-md-5 mt-5">
-          <div class="d-flex justify-content-center" style="height:92vh">
-            <div class="bs-stepper">
-              <div class="bs-stepper-header" role="tablist">
-                <!-- your steps here -->
-                <div class="step" data-target="#logins-part">
-                  <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-                    <div class="bs-stepper-circle bg-success"><i class="fas fa-check"></i></div>
-                  </div>
-                  <span class="d-block">Phone verfied</span>
+        <div class="col-md-6 col-lg-5 mt-md-5 px-md-5">
+          <div class="bs-stepper">
+            <div class="bs-stepper-header" role="tablist">
+              <!-- your steps here -->
+              <div class="step" data-target="#logins-part">
+                <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                  <div class="bs-stepper-circle bg-success"><i class="fas fa-check"></i></div>
                 </div>
-                <div class="line"></div>
-                <div class="step" data-target="#logins-part">
-                  <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-                    <div class="bs-stepper-circle border border-dark text-dark bg-white">2</i></div>
-                  </div>
-                  <span class="d-block">Name & Email</span>
-                </div>
+                <span class="d-block">Phone verfied</span>
               </div>
-              <div class="my-4">
-                <p class="my-5">Just one more step. Please confirm your
-                  name and email</p>
+              <div class="line"></div>
+              <div class="step" data-target="#logins-part">
+                <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                  <div class="bs-stepper-circle border border-dark text-dark bg-white">2</i></div>
+                </div>
+                <span class="d-block">Name & Email</span>
+              </div>
+            </div>
+            <div class="my-4">
+              <p class="my-5">Just one more step. Please confirm your
+                name and email</p>
 
-                <form>
-                  <div class="form-group">
-                    <label for="fullname" class="sr-only">Email address</label>
-                    <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
-                      placeholder="Your full name">
-                  </div>
-                  <div class="form-group">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Your email">
-                  </div>
-                  <button type="submit" class="btn btn-success btn-block">Continue</button>
-                </form>
-              </div>
+              <form>
+                <div class="form-group">
+                  <label for="fullname" class="sr-only">Email address</label>
+                  <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+                    placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="Your email">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Continue</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="refferal-modal" tabindex="-1" role="dialog" aria-labelledby="refferal-modal-label"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="refferal-modal-label">Referral Link</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <label for="referral-link" class="sr-only sr-only-focusable">Paste the referral link here</label>
-            <div class="input-group">
-              <input type="text" class="form-control" id="validationServerUsername"
-                placeholder="Paste the referral link here" required>
-              <div class="input-group-append">
-                <button class="btn btn-dark">Apply</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
@@ -155,6 +126,7 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
 </body>
 
 </html>

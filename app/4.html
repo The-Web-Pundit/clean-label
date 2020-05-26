@@ -22,18 +22,17 @@
   <!-- endbuild -->
 </head>
 
-<body>
+<body class="login" style="height: 90vh;">
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <section class="login">
+  <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 mt-5 px-md-5">
           <h1 class="h2">Register / Login</h1>
           <!-- Stepper -->
-
-          <div class="stepper d-flex flex-column mt-3 pt-5">
+          <div class="stepper mt-3 pt-md-5 pt-4">
             <div class="d-flex mb-1">
               <div class="d-flex flex-column pr-4 align-items-center">
                 <div class="rounded-circle py-2 px-3 bg-white mb-1 step-circle shadow">1</div>
@@ -65,12 +64,9 @@
                   based on the milestone you achieve.</p>
               </div>
             </div>
-          </div>
-
-          <!-- End Stepper -->
+          </div><!-- end stepper -->
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-6 pl-5">
           <div class="mt-md-5" style="height:92vh">
             <div class="">
               <p class="font-weight-bold py-3">Enter OTP sent to your mobile number</p>
@@ -79,25 +75,22 @@
               </p>
               <button class="btn btn-link d-inline px-1 text-secondary pt-0"> <i
                   class=" fas fa-pencil-alt"></i></button>
-
-              <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false"
-                autocomplete="off">
-                <input type="text" id="digit-1" value="7" name="digit-1" class="digit border-bottom"
-                  data-next="digit-2" />
-                <input type="text" id="digit-2" name="digit-2" class="digit border-bottom" data-next="digit-3"
-                  data-previous="digit-1" />
-                <input type="text" id="digit-3" name="digit-3" class="digit border-bottom" data-next="digit-4"
-                  data-previous="digit-2" />
-                <input type="text" id="digit-4" name="digit-4" class="digit border-bottom" data-next="digit-5"
-                  data-previous="digit-3" />
-                <input type="text" id="digit-5" name="digit-5" class="digit border-bottom" data-next="digit-6"
-                  data-previous="digit-4" />
-                <input type="text" id="digit-6" name="digit-6" class="digit border-bottom is-invalid"
-                  data-previous="digit-5" />
-                <div class="invalid-feedback">
-                  Please enter a valid OTP.
-                </div>
-              </form>
+              <section class="">
+                <form>
+                  <input id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)"
+                    onfocus="onFocusEvent(1)">
+                  <input id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)"
+                    onfocus="onFocusEvent(2)">
+                  <input id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)"
+                    onfocus="onFocusEvent(3)">
+                  <input id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)"
+                    onfocus="onFocusEvent(4)">
+                  <input id="codeBox5" type="number" maxlength="1" onkeyup="onKeyUpEvent(5, event)"
+                    onfocus="onFocusEvent(5)">
+                  <input id="codeBox6" type="number" maxlength="1" onkeyup="onKeyUpEvent(6, event)"
+                    onfocus="onFocusEvent(6)">
+                </form>
+              </section>
               <a href="#" target="_blank" class="btn btn-link text-secondary text-uppercase mt-5">Resend OTP</a>
             </div>
           </div>
@@ -106,17 +99,11 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="refferal-modal" tabindex="-1" role="dialog" aria-labelledby="refferal-modal-label"
-      aria-hidden="true">
+    <div class="modal fade border-0" id="refferal-modal" tabindex="-1" role="dialog"
+      aria-labelledby="refferal-modal-label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="refferal-modal-label">Referral Link</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
+          <div class="modal-body p-5">
             <label for="referral-link" class="sr-only sr-only-focusable">Paste the referral link here</label>
             <div class="input-group">
               <input type="text" class="form-control" id="validationServerUsername"
@@ -148,6 +135,23 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
+  <script>
+    $(document).ready(function () {
+
+      // Check if the user has entered
+      // a valid number
+      $('#phone').change(function () {
+        var phone = $(this).val()
+        if (phone.length != 10) {
+          alert("Please enter a valid number")
+        } else {
+          $('.btn-submit').removeClass('invisible')
+        }
+      })
+
+    });
+  </script>
 </body>
 
 </html>
